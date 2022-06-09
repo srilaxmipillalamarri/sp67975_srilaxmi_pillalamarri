@@ -9,13 +9,13 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 
 
-<!-- <bean  id="s1" class="com.zensar.beans.Employee" autowire="constructor">
+<bean  id="s1" class="com.zensar.beans.Employee" autowire="constructor">
 <property name="empId" value="105"></property>
 <property name="empName" value="srilaxmi"></property>
 <property name="empAge" value="23"></property>
 <property name="Department" ref="dep1"></property>
 </bean> 
- -->
+ 
 <bean id="dep1" class="com.zensar.beans.Department">
 <property name="depId" value="100"></property>
 <property name="depName" value="CSE"></property>
