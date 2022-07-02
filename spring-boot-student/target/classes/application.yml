@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    password: root123
+    url: jdbc:mysql://localhost:3306/zensar
+    username: root
+  jpa:
+    hibernate:
+     ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+       format-sql: true
+      # dialect: org.hibernate.dialect.MySQLDialect
+      
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        #exclude:
+        #- health
+      base-path: /myactuator      
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    build:
+      enabled: true
+    git:
+      enabled: true
+    env:
+      enabled: true
+
+
+
+  
+      

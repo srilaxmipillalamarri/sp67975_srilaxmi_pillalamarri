@@ -1,0 +1,54 @@
+server:
+  port: 2222
+spring:
+  datasource:
+    username: root
+    password: root123
+    url: jdbc:mysql://localhost:3306/productcontroller
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  application:
+    name: spring-boot-coupon
+  config:
+    import:
+    - optional:configserver:http://localhost:8888/  
+  zipkin:
+    base-url: http://localhost/9411
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    hostname: localhost 
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+      base-path: /myactuator
+      
+      
+  info:
+    env:
+      enabled: true
+      
+  
+logging:
+  level:
+    com:
+     zensar: debug
+     
+     
